@@ -6,7 +6,7 @@ public interface UserDao {
 
 	public void insertUser(user u);
 	
-	public user searchEmail(String email); 
+	public user searchEmail(String name); 
 	
 	public void modifyPassword(user u);
 	

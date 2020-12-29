@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.bit.dao.CardDao">
+	<update id="updateWholeCard" parameterType="HashMap">
+		UPDATE KANBANCARD SET CARD_ORDER_NUM = #{card.card_order_num} WHERE CARD_SEQ = #{card.card_seq} AND PROJECT_SEQ = #{projectNum}
+	</update>
+	
+	<select id="loadWholeCard" resultType="cardDto" parameterType="int">
+		SELECT * FROM KANBANCARD WHERE PROJECT_SEQ = #{param1}
+	</select>
+</mapper>
+
+	
+
+
+
+
+
+
+
+
+
+

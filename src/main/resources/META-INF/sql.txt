@@ -1,4 +1,4 @@
---user table 
+#user table 
 CREATE TABLE user (
     email char(200) NOT NULL,
     nickName char(200) NOT NULL,
@@ -7,14 +7,14 @@ CREATE TABLE user (
     PRIMARY KEY (email)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---role table
+#role table
 CREATE TABLE role (
 	email char(200) NOT NULL,
     ROLE_NAME char(200) NOT NULL,
 	FOREIGN KEY (email) REFERENCES user(email)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---role 권한 부여 트리거 
+#role 권한 부여 트리거 
 DELIMITER $$
 CREATE TRIGGER insert_role_trigger
 AFTER INSERT ON user
@@ -27,4 +27,79 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+#프로젝트 테이블 
+CREATE TABLE PROJECT(
+	PROJECT_SEQ int NOT NULL,
+	PROJECT_NAME varchar(45) NOT NULL,
+	LEADER_EMAIL varchar(45) NOT NULL,
+	FOREIGN KEY (LEADER_EMAIL) REFERENCES user(email),
+	PRIMARY KEY (PROJECT_SEQ)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#칸반 리스트 테이블 
+CREATE TABLE KANBANLIST(
+	LIST_SEQ int NOT NULL,
+	LIST_NAME varchar(45) NOT NULL,
+	LIST_ORDER_NUM int NOT NULL,
+	PROJECT_SEQ int NOT NULL,
+	PRIMARY KEY (LIST_SEQ),
+	FOREIGN KEY (PROJECT_SEQ) REFERENCES PROJECT(PROJECT_SEQ)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#칸반 카드 테이블 
+CREATE TABLE KANBANCARD(
+	CARD_SEQ int NOT NULL,
+	CARD_NAME varchar(45) NOT NULL,
+	CARD_ORDER_NUM varchar(200) NOT NULL,
+	CARD_CONTENT varchar(200) NOT NULL,
+	PROJECT_SEQ int NOT NULL,
+	PRIMARY KEY (CARD_SEQ),
+	FOREIGN KEY (PROJECT_SEQ) REFERENCES PROJECT(PROJECT_SEQ)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#1. 시퀀스 테이블 생성 (변경하는것 없이 그대로 실행)
+
+CREATE TABLE sequences ( name varchar(32), currval BIGINT UNSIGNED ) ENGINE=InnoDB;
+ 
+#2. 시퀀스 프로시저 생성(변경하는것 없이 그대로 실행)
+ 
+DELIMITER $$
+CREATE PROCEDURE `create_sequence`(IN the_name text)
+MODIFIES SQL DATA
+DETERMINISTIC
+BEGIN
+    DELETE FROM sequences WHERE name=the_name;
+    INSERT INTO sequences VALUES (the_name, 0);
+END $$
+DELIMITER;
+ 
+#3. nextval function 생성(변경하는것 없이 그대로 실행)
+ 
+ DELIMITER $$ 
+ CREATE FUNCTION `nextval`(the_name varchar(32))
+ RETURNS BIGINT UNSIGNED
+ MODIFIES SQL DATA
+ DETERMINISTIC
+ BEGIN
+     DECLARE ret BIGINT UNSIGNED;
+     UPDATE sequences SET currval=currval+1 WHERE name=the_name;
+     SELECT currval INTO ret FROM sequences WHERE name=the_name limit 1;
+     RETURN ret;
+ END $$
+ DELIMITER ;
+ 
+#4. 시퀀스명 입력 및 0값 넣기 (Statistics_seq 대신 원하는 시퀀스 명을 넣을 것)
+INSERT INTO sequences VALUES ('project_seq', 0);
+ 
+#5. nextval 값 가져오기 ('Statistics_seq' 대신 생성한 시퀀스 명을 넣을 것)
+
+select nextval('project_seq') as project_seq from dual;
+ 
+#nextval('project_seq')
+
+
+ 
+
+ 
 

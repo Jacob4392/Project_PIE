@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.all {
+	border: 15px solid purple;
+	float: left;
+}
+
+.mini {
+	border: 2px solid red;
+}
+
+#create {
+	float: left;
+}

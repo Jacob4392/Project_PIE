@@ -1,9 +1,7 @@
 package kr.or.bit.controller;
+
 import java.io.IOException;
-import java.util.Random;
-
 import javax.servlet.http.HttpSession;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -14,9 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.github.scribejava.core.model.OAuth2AccessToken;
-
 import kr.or.bit.dto.user;
 import kr.or.bit.service.UserService;
 import kr.or.bit.util.NaverLoginBO;

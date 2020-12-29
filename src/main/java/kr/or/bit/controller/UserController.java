@@ -1,7 +1,6 @@
 package kr.or.bit.controller;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import javax.servlet.http.HttpSession;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import kr.or.bit.dto.user;
 import kr.or.bit.service.UserService;
@@ -54,6 +52,7 @@ public class UserController {
 	//로그아웃
 	@RequestMapping(value = "logout.do", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
+		System.out.println("세션 종료");
 		session.invalidate();
 		return "redirect:index.htm";
 	}

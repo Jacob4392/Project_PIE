@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.or.bit.dao.ListDao">
+	<update id="updateKanbanList" parameterType="HashMap">
+		UPDATE KANBANLIST SET LIST_ORDER_NUM = #{list.list_order_num} WHERE LIST_SEQ = #{list.list_seq} AND PROJECT_SEQ = #{projectNum}
+	</update>
+	
+	<select id="loadWholeList" resultType="listDto" parameterType="int">
+		SELECT * FROM KANBANLIST WHERE PROJECT_SEQ = #{param1}
+	</select>
+</mapper>
+
+	
+
+
+
+
+
+
+
+
+
+
