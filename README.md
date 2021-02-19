@@ -48,7 +48,7 @@ PIE는 약 6주 동안 준비한 비트캠프 2조(팀명: PIE)의 Spring FrameW
 <br><br><br>
 
 # 구현 기능 UI 및 상세 설명
-![슬라이드9](https://user-images.githubusercontent.com/67107008/106480539-ddbbd280-64ee-11eb-8b6c-ea98958cb102.png)
+![image](https://user-images.githubusercontent.com/69758786/108469318-5c748600-72cb-11eb-9dd9-d349c054a4f5.png)
 <br>
 ![슬라이드10](https://user-images.githubusercontent.com/67107008/106480545-df859600-64ee-11eb-95a7-2cdb0d079baf.png)
 <br>
