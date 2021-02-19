@@ -20,7 +20,7 @@ PIE는 약 6주 동안 준비한 비트캠프 2조(팀명: PIE)의 Spring FrameW
 <br><br><br>
 
 # DB ERD
-![image](https://user-images.githubusercontent.com/67107008/106474811-a0544680-64e8-11eb-82ca-acbe700ee2e0.png)
+![mysql_DB_modeling](https://user-images.githubusercontent.com/69758786/108461496-241a7b00-72be-11eb-973e-77a1c1a66f15.JPG)
 <br><br><br>
 
 # WEB-SOCKET을 활용한 실시간 채팅 및 알림
