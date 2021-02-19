@@ -16,11 +16,11 @@ PIE는 약 6주 동안 준비한 비트캠프 2조(팀명: PIE)의 Spring FrameW
 <br><br><br>
 
 # 개발 언어 및 API
-![my skill](https://user-images.githubusercontent.com/69758786/108465199-e66d2080-72c4-11eb-9130-ec5efb10035b.jpg)
+![my skill](https://user-images.githubusercontent.com/69758786/108467818-2afabb00-72c9-11eb-971c-570c89fe652b.jpg)
 <br><br><br>
 
 # 개발 환경 및 역할
-![mypart](https://user-images.githubusercontent.com/69758786/108465972-44e6ce80-72c6-11eb-83c5-050f2acf7e9f.jpg)
+![mypart](https://user-images.githubusercontent.com/69758786/108467823-2c2be800-72c9-11eb-95fe-74fb79f0345b.jpg)
 <br><br><br>
 
 # DB ERD
